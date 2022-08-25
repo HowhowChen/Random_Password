@@ -43,7 +43,7 @@ app.post('/', async(req, res) => {
           password = `password is repeated: ${passwordDoc.password}`
           return res.render('index', { password, options })  //{ password: password, options: options }
         } else {
-          passwordDB.create({ password })
+          passwordDB.create({ password, time })
             .then(() => res.render('index', { password, options }))
             .catch(error => console.log(error))
         }
