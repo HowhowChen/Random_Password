@@ -15,7 +15,7 @@ app.set('view engine', 'handlebars')
 
 app.use(express.urlencoded({ extended: true }))
 
-mongoose.connect('mongodb://127.0.0.1:27017/Password')
+mongoose.connect('mongodb://root:password@127.0.0.1:27017/Password?authSource=admin')
 const db = mongoose.connection
 
 db.on('error', () => {
